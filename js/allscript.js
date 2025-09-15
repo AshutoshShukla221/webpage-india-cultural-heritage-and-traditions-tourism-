@@ -1,4 +1,8 @@
-let navbar = document.querySelector('.header .navbar');
+if (typeof navbar === 'undefined') {
+    var navbar = document.querySelector('.header .navbar');
+} else if (!navbar) {
+    var navbar = document.querySelector('.header .navbar');
+}
 
 document.querySelector('#menu-btn').onclick = () =>{
     navbar.classList.add('active');
@@ -8,7 +12,11 @@ document.querySelector('#nav-close').onclick = () =>{
     navbar.classList.remove('active');
 }
 
-let searchForm = document.querySelector('.search-form');
+if (typeof searchForm === 'undefined') {
+    var searchForm = document.querySelector('.search-form');
+} else if (!searchForm) {
+    var searchForm = document.querySelector('.search-form');
+}
 
 document.querySelector('#search-btn').onclick = () =>{
     searchForm.classList.add('active');
