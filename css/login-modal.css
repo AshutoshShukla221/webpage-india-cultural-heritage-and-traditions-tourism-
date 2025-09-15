@@ -1,0 +1,142 @@
+.header .icons .login-btn {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 1rem;
+}
+
+.header .icons .login-btn:hover {
+  background: #cc0000;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal-close:hover {
+  color: #ff0000;
+}
+
+.modal-tabs {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem;
+  background: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.tab-button.active {
+  background: #10221b;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-content label {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #10221b;
+}
+
+.tab-content input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.4rem;
+}
+
+.tab-content .btn {
+  align-self: flex-start;
+  background: #10221b;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.tab-content .btn:hover {
+  background: #219150;
+}
+
+.or-divider {
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ccc;
+}
+
+.or-divider::before {
+  left: 0;
+}
+
+.or-divider::after {
+  right: 0;
+}

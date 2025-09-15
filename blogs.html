@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S79Y2FRX1H"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S79Y2FRX1H');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv='content-language' content='en-US'>
+  <meta name="title" content="Blog - Visit India">
+  <meta name="description" content="Discover India's iconic landmarks through our travel blog.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/blogs.html">
+  <meta property="og:title" content="Blog - Visit India">
+  <meta property="og:description" content="Discover India's iconic landmarks through our travel blog.">
+  <meta property="og:image" content="/images/preview.webp">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/blogs.html">
+  <meta property="twitter:title" content="Blog - Visit India">
+  <meta property="twitter:description" content="Discover India's iconic landmarks through our travel blog.">
+  <meta property="twitter:image" content="/images/preview.webp">
+
+  <title>Blog</title>
+  <link rel="icon" type="image/x-icon" href="/images/tablogo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="css/blog.css">
+
+  <style>
+    /* Fix for text padding */
+    .postcard__text {
+      padding: 0 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+<header class="header">
+
+<a href="index.html" class="logo">
+  <img src="images/tablogo.png" alt="Bharat Darshan Logo" style="height:80px;">  Bharat Darshan
+</a>
+  <nav class="navbar">
+    <div id="nav-close" class="fas fa-times"></div>
+    <a href="index.html">home</a>
+    <a href="adventure.html">Adventure</a>
+    <a href="city.html">city</a>
+    <a href="blogs.html">blogs</a>
+    <a href="events.html">Events</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">about us</a>
+  </nav>
+  <div class="icons">
+    <div id="menu-btn" class="fas fa-bars"></div>
+    <div id="search-btn" class="fas fa-search"></div>
+  </div>
+</header>
+
+<div class="search-form">
+  <div id="close-search" class="fas fa-times"></div>
+  <form action="">
+    <input type="search" placeholder="search here..." id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+  </form>
+</div>
+<div class="banner-area"></div>
+
+<section class="light">
+  <div class="container py-2">
+    <div class="h1 text-center text-dark pb-4" id="pageHeaderTitle">Welcome To Our Blog</div>
+
+    <div class="text-center mb-4">
+      <button class="btn btn-danger px-4" id="addBlogBtn">
+        <i class="fas fa-plus mr-2"></i> Add Your Blog
+      </button>
+    </div>
+
+    <div class="modal fade" id="blogModal" tabindex="-1" role="dialog" aria-labelledby="blogModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="blogModalLabel">Add Your Blog</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="blogForm">
+              <div class="form-group">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" class="form-control" id="blogTitle" required>
+              </div>
+              <div class="form-group">
+                <label for="blogDescription">Blog Description</label>
+                <textarea class="form-control" id="blogDescription" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="blogImage">Upload Image</label>
+                <input type="file" class="form-control-file" id="blogImage" accept="image/*">
+              </div>
+              <div class="form-group">
+                <label for="blogVideo">Upload Video (optional)</label>
+                <input type="file" class="form-control-file" id="blogVideo" accept="video/*">
+              </div>
+              <button type="submit" class="btn btn-success">Submit Blog</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: -25px; right: 0; color: white; font-size: 2.5rem; opacity: 1;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <video id="popupVideoPlayer" width="100%" controls></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="blogContainer">
+      <article class="postcard light blue" id="taj">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/closed-up-photo-of-pink-petaled-flower-wallpaper-preview.jpg" alt="Taj Mahal" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#taj">The Taj Mahal, Agra</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-01-01 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Mon, January 1st 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            The Taj Mahal, an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra...
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-0"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-0">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-0">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="postcard light green" id="redfort">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/red-fort-delhi-india-red-fort-historic-fort-city-delhi-india-was-main-residence-emperors-138092261.webp" alt="Red Fort" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title green"><a href="#">Red Fort, Delhi</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-01-10 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>January 10, 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            The Red Fort, also known as Lal Qila, is a historic fort in Delhi, India. Built in 1639, it served as the main residence of Mughal emperors. The fort's massive red sandstone walls and intricate architecture make it a symbol of India's rich history.
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-1"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-1">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-1">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="postcard light blue" id="qutub">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/qutub-minar-2155776_1280.jpg" alt="Qutub Minar" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">Qutub Minar, Delhi</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-01-15 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>January 15, 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Qutub Minar is a minaret and victory tower in Delhi, India. Constructed in 1193, it is the tallest brick minaret in the world and a UNESCO World Heritage Site. The tower's intricate carvings and historical significance attract visitors from around the globe.
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-2"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-2">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-2">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="postcard light green" id="hawa">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/istockphoto-528440120-612x612.jpg" alt="Hawa Mahal" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title green"><a href="#">Hawa Mahal, Jaipur</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-02-05 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>February 5, 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Hawa Mahal, or Palace of Winds, is a palace in Jaipur, Rajasthan. Built in 1799, it features 953 windows with intricate latticework, allowing royal women to observe street festivals without being seen. Its pink sandstone facade gives Jaipur its nickname, the Pink City.
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-3"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-3">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-3">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="postcard light blue" id="amber">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/jahangir-mahal-pink-sandstone-agra-fort-agra.jpg" alt="Amber Fort" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">Amber Fort, Jaipur</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-02-10 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>February 10, 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Amber Fort, also known as Amer Fort, is a fort-palace in Jaipur, Rajasthan. Built with red sandstone and marble, it offers stunning views of Maota Lake. The fort features intricate carvings, courtyards, and halls adorned with mirrors and paintings, blending Hindu and Mughal architecture.
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-4"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-4">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-4">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="postcard light green" id="citypalace">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/red-fort-delhi-india-red-fort-historic-fort-city-delhi-india-was-main-residence-emperors-138092261.webp" alt="City Palace" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title green"><a href="#">City Palace, Jaipur</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-02-15 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>February 15, 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            City Palace is a royal palace complex in Jaipur, Rajasthan. It serves as the residence of the royal family and features a mix of Rajasthani and Mughal architecture. The palace includes courtyards, gardens, and museums showcasing royal artifacts, textiles, and weapons.
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-5"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-5">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-5">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="postcard light blue" id="humayun">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/photo-1624361899662-3ce9c0f44817.jpg" alt="Humayun's Tomb" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a href="#">Humayun's Tomb, Delhi</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-01-20 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>January 20, 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Humayun's Tomb is the tomb of Mughal Emperor Humayun in Delhi, India. Built in 1570, it is a UNESCO World Heritage Site and the first garden-tomb on the Indian subcontinent. The tomb's red sandstone and marble architecture influenced the design of the Taj Mahal.
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-6"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-6">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-6">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="postcard light green" id="agrafort">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/jahangir-mahal-pink-sandstone-agra-fort-agra.jpg" alt="Agra Fort" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title green"><a href="#">Agra Fort, Agra</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2023-03-05 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>March 5, 2023
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Agra Fort is a historical fort in Agra, India. Built by Akbar in 1565, it served as the main residence of Mughal emperors. The fort's massive red sandstone walls and intricate palaces reflect the grandeur of Mughal architecture and are a UNESCO World Heritage Site.
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="blog-7"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="blog-7">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="blog-7">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<a href="#top" class="to-top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/allscript.js"></script>
+
+<script>
+document.getElementById("addBlogBtn").addEventListener("click", function(){
+  $('#blogModal').modal('show');
+});
+
+document.getElementById("blogForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let title = document.getElementById("blogTitle").value;
+  let desc = document.getElementById("blogDescription").value;
+  let imageFile = document.getElementById("blogImage").files[0];
+  let videoFile = document.getElementById("blogVideo").files[0];
+  let now = new Date();
+
+  let reader = new FileReader();
+  reader.onload = function(event){
+    let imgSrc = imageFile ? event.target.result : "";
+    let videoURL = videoFile ? URL.createObjectURL(videoFile) : "";
+    let blogId = Date.now();
+
+    likeCounts[blogId] = 0;
+    localStorage.setItem('likeCounts', JSON.stringify(likeCounts));
+
+    let videoButtonHTML = videoFile ? `
+      <div class="mt-3">
+        <button class="btn watch-video-btn" data-video-src="${videoURL}">
+          <i class="fas fa-play mr-2"></i>Watch Video
+        </button>
+      </div>` : "";
+
+    let imageHTML = imgSrc ? `
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="${imgSrc}" alt="${title}" />
+        </a>` : "";
+
+    // *** FIX IS HERE ***
+    // Add a 'no-image' class to the article if imgSrc is missing
+    let articleClass = 'postcard light green';
+    if (!imgSrc) {
+        articleClass += ' no-image';
+    }
+
+    let blogHTML = `
+      <article class="${articleClass}" id="blog-${blogId}">
+        ${imageHTML}
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title green"><a href="#">${title}</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="${now.toISOString()}">
+              <i class="fas fa-calendar-alt mr-2"></i>${now.toLocaleString()}
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            ${desc}
+            ${videoButtonHTML}
+          </div>
+          <div class="blog-interactions">
+            <button class="like-btn" data-blog-id="${blogId}"><i class="fas fa-heart"></i> <span class="like-count">0</span></button>
+            <div class="rating">
+              <span class="stars" data-blog-id="${blogId}">☆☆☆☆☆</span> <span class="rating-value">0</span>
+            </div>
+            <div class="comments-section">
+              <form class="comment-form" data-blog-id="${blogId}">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit">Submit</button>
+              </form>
+              <div class="comments-list"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+
+    document.getElementById("blogContainer").insertAdjacentHTML("afterbegin", blogHTML);
+    $('#blogModal').modal('hide');
+    document.getElementById("blogForm").reset();
+  };
+
+  if(imageFile){
+    reader.readAsDataURL(imageFile);
+  } else {
+    reader.onload({ target: { result: "" }});
+  }
+});
+
+// Event listener for video modal
+document.getElementById("blogContainer").addEventListener("click", function(e) {
+  const button = e.target.closest('.watch-video-btn');
+  if (button) {
+    const videoSrc = button.getAttribute("data-video-src");
+    const videoPlayer = document.getElementById("popupVideoPlayer");
+    videoPlayer.src = videoSrc;
+    $('#videoModal').modal('show');
+  }
+});
+
+// Pause video when modal is closed
+$('#videoModal').on('hidden.bs.modal', function () {
+  const videoPlayer = document.getElementById("popupVideoPlayer");
+  videoPlayer.pause();
+  videoPlayer.src = "";
+});
+
+// Blog interactions functionality
+let likedBlogs = JSON.parse(localStorage.getItem('likedBlogs')) || {};
+let likeCounts = JSON.parse(localStorage.getItem('likeCounts')) || {};
+let blogComments = JSON.parse(localStorage.getItem('blogComments')) || {};
+let blogRatings = JSON.parse(localStorage.getItem('blogRatings')) || {};
+
+// // Initialize likeCounts for existing blogs if not present
+// if (!likeCounts['blog-0']) likeCounts['blog-0'] = 0;
+// if (!likeCounts['blog-1']) likeCounts['blog-1'] = 0;
+// if (!likeCounts['blog-2']) likeCounts['blog-2'] = 0;
+// if (!likeCounts['blog-3']) likeCounts['blog-3'] = 0;
+// if (!likeCounts['blog-4']) likeCounts['blog-4'] = 0;
+// if (!likeCounts['blog-5']) likeCounts['blog-5'] = 0;
+// if (!likeCounts['blog-6']) likeCounts['blog-6'] = 0;
+// if (!likeCounts['blog-7']) likeCounts['blog-7'] = 0;
+
+// Initialize interactions on page load
+document.addEventListener('DOMContentLoaded', function() {
+  updateAllInteractions();
+});
+
+function updateAllInteractions() {
+  // Update likes
+  document.querySelectorAll('.like-btn').forEach(btn => {
+    const blogId = btn.getAttribute('data-blog-id');
+    const countSpan = btn.querySelector('.like-count');
+    const isLiked = likedBlogs[blogId] || false;
+    btn.classList.toggle('liked', isLiked);
+    countSpan.textContent = likeCounts[blogId] || 0;
+  });
+
+  // Update ratings
+  document.querySelectorAll('.stars').forEach(starsEl => {
+    const blogId = starsEl.getAttribute('data-blog-id');
+    const ratings = blogRatings[blogId] || [];
+    const avg = ratings.length ? (ratings.reduce((a,b)=>a+b)/ratings.length).toFixed(1) : 0;
+    const ratingValueEl = starsEl.nextElementSibling;
+    ratingValueEl.textContent = avg;
+    const filledStars = Math.round(avg);
+    starsEl.textContent = '★'.repeat(filledStars) + '☆'.repeat(5 - filledStars);
+  });
+
+  // Update comments
+  document.querySelectorAll('.comments-list').forEach(list => {
+    const blogId = list.previousElementSibling.getAttribute('data-blog-id');
+    const comments = blogComments[blogId] || [];
+    list.innerHTML = comments.map(comment => `<div class="comment">${comment}</div>`).join('');
+  });
+}
+
+// Like button click
+document.getElementById('blogContainer').addEventListener('click', function(e) {
+  if (e.target.closest('.like-btn')) {
+    const btn = e.target.closest('.like-btn');
+    const blogId = btn.getAttribute('data-blog-id');
+    const isLiked = likedBlogs[blogId] || false;
+    if (isLiked) {
+      likedBlogs[blogId] = false;
+      likeCounts[blogId] = (likeCounts[blogId] || 0) - 1;
+    } else {
+      likedBlogs[blogId] = true;
+      likeCounts[blogId] = (likeCounts[blogId] || 0) + 1;
+    }
+    localStorage.setItem('likedBlogs', JSON.stringify(likedBlogs));
+    localStorage.setItem('likeCounts', JSON.stringify(likeCounts));
+    updateAllInteractions();
+  }
+});
+
+
+
+// Rating click
+document.getElementById('blogContainer').addEventListener('click', function(e) {
+  if (e.target.closest('.stars')) {
+    const starsEl = e.target.closest('.stars');
+    const blogId = starsEl.getAttribute('data-blog-id');
+    const rect = starsEl.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const starWidth = rect.width / 5;
+    const rating = Math.ceil(x / starWidth);
+    if (!blogRatings[blogId]) blogRatings[blogId] = [];
+    blogRatings[blogId].push(rating);
+    localStorage.setItem('blogRatings', JSON.stringify(blogRatings));
+    updateAllInteractions();
+  }
+});
+
+// Comment form submit
+document.getElementById('blogContainer').addEventListener('submit', function(e) {
+  if (e.target.classList.contains('comment-form')) {
+    e.preventDefault();
+    const form = e.target;
+    const blogId = form.getAttribute('data-blog-id');
+    const input = form.querySelector('input');
+    const comment = input.value.trim();
+
+    // Get the star rating for this blog from the rating-value span
+    const ratingValueEl = form.parentElement.previousElementSibling.querySelector('.rating-value');
+    const ratingValue = ratingValueEl ? ratingValueEl.textContent : '0';
+
+    if (comment) {
+      if (!blogComments[blogId]) blogComments[blogId] = [];
+      // Store comment with rating appended
+      blogComments[blogId].push(`${comment} (Rating: ${ratingValue} ★)`);
+      localStorage.setItem('blogComments', JSON.stringify(blogComments));
+      input.value = '';
+      updateAllInteractions();
+    }
+  }
+});
+</script>
+
+</body>
+</html>
